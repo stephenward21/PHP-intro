@@ -6,7 +6,20 @@
 <body>
 	<!-- Can use the <?php ?> and <?= ?> tags to write compatible php in version 5 and 7.  <script tags deprecated in php 7 -->
 	<!-- instructions or lines/blocks of code are escaped with a ';' -->
-		
+	<?php
+	header("Expires: Tue, 01 Jan 2000 00:00:00 GMT");
+	header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+	header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+	header("Cache-Control: post-check=0, pre-check=0", false);
+	header("Pragma: no-cache");
+	?>
+
+	<?php 
+	$name = 'Stephen';
+	$age = 31;
+	echo '<p>My name is '.$name.'and I am '.$age.' years old</p>';
+	?>
+
 	<?= echo '<p> Hello World </p>
 	<h1> It is a beautiful world, no?? </h1>
 	<h2> THANK YOU!!! </h2>'; 
@@ -93,8 +106,13 @@
 
 	$million = 1000000;
 	$large_number =  50000 * $million;
-	var_dump($large_number);                     // float(50000000000)
+	var_dump($large_number); 
+	clearstatcache()                    // float(50000000000)
 	?>
 
+
+
+
+	
 </body>
 </html>
